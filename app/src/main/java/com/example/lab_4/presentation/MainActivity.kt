@@ -35,6 +35,7 @@ import com.example.lab_4.R
 import com.example.lab_4.data.database.ChiuitDbStore
 import com.example.lab_4.data.database.RoomDatabase
 import com.example.lab_4.presentation.ComposeActivity.Companion.EXTRA_TEXT
+import androidx.compose.material.icons.filled.Delete
 
 class MainActivity : ComponentActivity() {
 
@@ -104,7 +105,18 @@ class MainActivity : ComponentActivity() {
                     )
                 }
             }
+
             // TODO 4: Add a new button that has the purpose to delete a chiuit.
+//            Button(
+//                modifier = Modifier
+//                    .weight(0.2f)
+//                    .padding(8.dp),
+//                onClick = { viewModel.removeChiuit(chiuit) }) {
+//                Icon(
+//                    Icons.Filled.Delete,
+//                    stringResource(R.string.delete_action_icon_content_description)
+//                )
+//            }
         }
     }
 
@@ -140,6 +152,9 @@ class MainActivity : ComponentActivity() {
     private fun setChiuitText(resultText: String?) {
         if(resultText !== null) {
             // TODO 1: Instantiate a new chiuit object then delegate the addition to the [viewModel].
+//            val chiuit = Chiuit(System.currentTimeMillis(), resultText)
+//            viewModel.addChiuit(chiuit.description)
+            viewModel.addChiuit(resultText)
         }
     }
 
